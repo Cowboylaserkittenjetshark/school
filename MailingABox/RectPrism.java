@@ -12,11 +12,21 @@ public class RectPrism implements Comparable {
     this.volume = (height * width * depth);
     double smallestDimension1 = (height > width ? width : height);
     double smallestDimension2 = (smallestDimension1 > depth ? depth : (height < width ? width : height));
-    this.shippingGirth = (majorDimension1 * 2) + (majorDimension2 * 2);
+    this.shippingGirth = (smallestDimension1 * 2) + (smallestDimension2 * 2);
   }
 
-  // @Override
-  // public int CompareTo(RectPrism prism) {
-  //
-  // }
+  public double getVolume() {
+    return volume;
+  }
+
+  public double getShippingGirth() {
+    return shippingGirth;
+  }
+
+  @Override
+  public int CompareTo(RectPrism prism) {
+    if (this.getVolume() == prism.getVolume())
+      return Math.max(this.getShippingGirth(), prism.getShippingGirth());
+    return Math.max(this.getVolume(), prism.getVolume());
+  }
 }
