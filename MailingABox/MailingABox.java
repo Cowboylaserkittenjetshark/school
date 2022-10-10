@@ -3,7 +3,7 @@ import java.util.Comparator;
 
 public class MailingABox {
   public static void main(String[] args) {
-    ArrayList rectPrismList = new ArrayList<RectPrism>();
+    ArrayList<RectPrism> rectPrismList = new ArrayList<RectPrism>();
     // Populate rectPrismList with RectPrism objects
     for (int index = 0; index < 10; index++) {
       rectPrismList.add(new RectPrism((Math.random() * 10 + 1), (Math.random() * 10 + 1), (Math.random() * 10 + 1)));
