@@ -11,7 +11,8 @@ public class RectPrism implements Comparable<RectPrism> {
     this.depth = depth;
     this.volume = (height * width * depth);
     int smallestDimension1 = (height > width ? width : height);
-    int smallestDimension2 = (smallestDimension1 > depth ? depth : (height < width ? width : height));
+    int smallestDimension2 = (height < width ? width : height);
+    smallestDimension2 = (smallestDimension2 < depth ? smallestDimension2 : depth);
     this.shippingGirth = (smallestDimension1 * 2) + (smallestDimension2 * 2);
   }
 
