@@ -1,33 +1,33 @@
 public class RectPrism implements Comparable<RectPrism> {
-  private double height;
-  private double width;
-  private double depth;
-  private double volume;
-  private double shippingGirth;
+  private int height;
+  private int width;
+  private int depth;
+  private int volume;
+  private int shippingGirth;
 
-  public RectPrism(double height, double width, double depth) {
+  public RectPrism(int height, int width, int depth) {
     this.height = height;
     this.width = width;
     this.depth = depth;
     this.volume = (height * width * depth);
-    double smallestDimension1 = (height > width ? width : height);
-    double smallestDimension2 = (smallestDimension1 > depth ? depth : (height < width ? width : height));
+    int smallestDimension1 = (height > width ? width : height);
+    int smallestDimension2 = (smallestDimension1 > depth ? depth : (height < width ? width : height));
     this.shippingGirth = (smallestDimension1 * 2) + (smallestDimension2 * 2);
   }
 
-  public double getVolume() {
+  public int getVolume() {
     return volume;
   }
 
-  public double getShippingGirth() {
+  public int getShippingGirth() {
     return shippingGirth;
   }
 
   @Override
   public int compareTo(RectPrism prism) {
     if (this.getVolume() == prism.getVolume())
-      return (int) (this.getShippingGirth() - prism.getShippingGirth());
-    return (int) (this.getVolume() - prism.getVolume());
+      return this.getShippingGirth() - prism.getShippingGirth();
+    return this.getVolume() - prism.getVolume();
   }
 
   @Override
