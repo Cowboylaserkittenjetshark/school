@@ -1,4 +1,4 @@
-public class RectPrism implements Comparable {
+public class RectPrism implements Comparable<RectPrism> {
   private double height;
   private double width;
   private double depth;

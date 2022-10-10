@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 
-/**
- * 
- */
 public class MailingABox {
   public static void main(String[] args) {
     ArrayList rectPrismList = new ArrayList<RectPrism>();
