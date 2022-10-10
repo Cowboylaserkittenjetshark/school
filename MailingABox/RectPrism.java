@@ -24,9 +24,15 @@ public class RectPrism implements Comparable {
   }
 
   @Override
-  public int CompareTo(RectPrism prism) {
+  public int compareTo(RectPrism prism) {
     if (this.getVolume() == prism.getVolume())
-      return Math.max(this.getShippingGirth(), prism.getShippingGirth());
-    return Math.max(this.getVolume(), prism.getVolume());
+      return (int) (this.getShippingGirth() - prism.getShippingGirth());
+    return (int) (this.getVolume() - prism.getVolume());
+  }
+
+  @Override
+  public String toString() {
+    return "{ Volume: " + this.volume + ", Girth: " + this.shippingGirth + ", Height: " + this.height + ", Width: "
+        + this.width + ", Depth: " + this.depth + "}";
   }
 }
