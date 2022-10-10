@@ -9,10 +9,11 @@ public class MailingABox {
       rectPrismList.add(new RectPrism((Math.random() * 10 + 1), (Math.random() * 10 + 1), (Math.random() * 10 + 1)));
     }
     // Print rectPrismList before sorting
-    System.out.println(rectPrismList.toString());
+    System.out.println(rectPrismList.toString() + "\n");
     // Sort rectPrismList
     rectPrismList.sort(Comparator.naturalOrder());
     // Print rectPrismList after sorting
+    System.out.println("Sorting . . .\n");
     System.out.println(rectPrismList.toString());
   }
 }
